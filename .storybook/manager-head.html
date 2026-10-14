@@ -1,0 +1,19 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+<meta name="description" content="Accessible React components by Sam Nicholls, built with TypeScript and Tailwind CSS to WCAG 2.2 AA." />
+<meta name="theme-color" content="#0a0a0a" />
+<script>document.documentElement.lang = "en-GB"</script>
+<style>
+  /* Storybook's selected sidebar item is white on a darkened accent (about 4:1). Near-black on the accent passes AA. */
+  .sidebar-item[data-selected="true"] {
+    /* biome-ignore lint/complexity/noImportantStyles: must beat Storybook's own runtime styles */
+    background: #ff7a45 !important;
+  }
+  .sidebar-item[data-selected="true"],
+  .sidebar-item[data-selected="true"] * {
+    /* biome-ignore lint/complexity/noImportantStyles: must beat Storybook's own runtime styles */
+    color: #0a0a0a !important;
+  }
+</style>

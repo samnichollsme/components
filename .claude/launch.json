@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "storybook",
+      "runtimeExecutable": "/Users/samuelnicholls/.bun/bin/bun",
+      "runtimeArgs": ["run", "dev", "--no-open"],
+      "port": 6006
+    },
+    {
+      "name": "preview",
+      "runtimeExecutable": "/Users/samuelnicholls/.bun/bin/bun",
+      "runtimeArgs": ["run", "preview", "--port", "4173"],
+      "port": 4173
+    }
+  ]
+}

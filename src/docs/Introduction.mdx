@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# Components
+
+A small library of accessible React components, built from scratch with TypeScript and Tailwind CSS. It's a showcase project: each component follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) and is built and tested to **WCAG 2.2 AA**.
+
+By [Sam Nicholls](https://samnicholls.me) · [Source on GitHub](https://github.com/samnichollsme/components)
+
+## What's here
+
+| Component | Pattern |
+|---|---|
+| **Accordion** | Expanding sections with arrow-key navigation between headers |
+| **Button** | Native button with variants and sizes |
+| **Combobox** | Editable input with list autocomplete and live result counts |
+| **Dialog** | Modal and alert dialogs on the native `<dialog>` element |
+| **Switch** | On/off toggle with a visible label and description |
+| **Tabs** | Roving focus with automatic activation, horizontal or vertical |
+| **Toast** | Live-region notifications with pausable timers |
+| **Tooltip** | Hover and focus descriptions that meet WCAG 1.4.13 |
+
+Each page lists the component's keyboard interactions and explains its accessibility decisions.
+
+## How it's tested
+
+Every story is also a test. Running `bun run test` renders each story in a real Chromium browser with [Vitest](https://vitest.dev), then:
+
+1. **Runs its play function.** These drive the component with the keyboard and mouse the way a user would, and check focus, ARIA state and announcements.
+2. **Runs [axe](https://github.com/dequelabs/axe-core) against the result.** Any violation, including colour contrast, fails the test.
+
+Open the **Accessibility** and **Interactions** panels on any story to see both results live.
+
+## Design
+
+Monochrome with a single accent colour, matching [samnicholls.me](https://samnicholls.me). The accent is one CSS variable (`--color-accent` in `src/index.css`), so every component can be re-themed by changing one line. All motion is short and one-off, and is turned off for anyone who prefers reduced motion.

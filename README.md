@@ -30,7 +30,7 @@ Each component's docs page lists its keyboard interactions and explains its acce
 | **Build tool** | [Vite](https://vite.dev) |
 | **Runtime / package manager** | [Bun](https://bun.sh) |
 | **Linting & formatting** | [Biome](https://biomejs.dev), with [Lefthook](https://lefthook.dev) pre-commit hooks |
-| **Hosting** | [Cloudflare Workers](https://workers.cloudflare.com), deployed by GitHub Actions |
+| **Hosting** | [Cloudflare Workers](https://workers.cloudflare.com) |
 
 ## Accessibility testing
 
@@ -92,11 +92,11 @@ src/
 
 ## Deployment
 
-The Storybook is hosted on Cloudflare Workers as static assets (configured in `wrangler.jsonc`). A [GitHub Actions workflow](.github/workflows/ci.yml) runs on every push and pull request. It runs Biome, TypeScript, the Storybook build and the full test suite. On pushes to `main`, if everything passes, it deploys with Wrangler.
+The Storybook is hosted on Cloudflare Workers as static assets at **[components.samnicholls.me](https://components.samnicholls.me)** (configured in `wrangler.jsonc`). Cloudflare's GitHub integration **builds and deploys automatically on every push to `main`**.
 
-So code with lint errors, type errors, failing interaction tests **or accessibility violations** never reaches production.
+The build runs Biome and TypeScript first, so code with lint, formatting or type errors fails the build and never reaches production.
 
-The workflow needs two repository secrets: `CLOUDFLARE_API_TOKEN` (a token with the **Edit Cloudflare Workers** template) and `CLOUDFLARE_ACCOUNT_ID`.
+A [GitHub Actions workflow](.github/workflows/ci.yml) runs the same checks plus the full interaction and accessibility test suite on every push and pull request, so failures show up on the commit or PR.
 
 ## Coding standards
 

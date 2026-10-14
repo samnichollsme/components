@@ -4,5 +4,6 @@
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  "routes": [{ "pattern": "components.samnicholls.me", "custom_domain": true }]
 }

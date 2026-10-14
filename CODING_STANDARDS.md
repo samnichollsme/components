@@ -160,7 +160,7 @@ It runs at three points:
 
 1. **On save in VS Code.** Install the recommended Biome extension (`.vscode/extensions.json`); the workspace settings format and fix on save.
 2. **On commit.** A [Lefthook](https://lefthook.dev) pre-commit hook runs `biome check --write` on staged files and re-stages fixes. It's installed automatically by `bun install`.
-3. **In CI.** `bun run build` runs `biome ci` first, so code with lint errors or bad formatting **fails the GitHub Actions workflow and never reaches production**.
+3. **On build.** `bun run build` runs `biome ci` first, so code with lint errors or bad formatting **fails the Cloudflare build and never reaches production**.
 
 ### Formatting (enforced)
 

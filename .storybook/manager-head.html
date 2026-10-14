@@ -5,7 +5,16 @@
 <meta name="description" content="Accessible React components by Sam Nicholls, built with TypeScript and Tailwind CSS to WCAG 2.2 AA." />
 <meta name="theme-color" content="#0a0a0a" />
 <script>document.documentElement.lang = "en-GB"</script>
+<meta name="color-scheme" content="dark" />
 <style>
+  :root {
+    color-scheme: dark;
+    background: #0a0a0a;
+  }
+  /* The preview frame is transparent while it loads, so give it the page background rather than white */
+  #storybook-preview-iframe {
+    background: #0a0a0a;
+  }
   /* Storybook's selected sidebar item is white on a darkened accent (about 4:1). Near-black on the accent passes AA. */
   .sidebar-item[data-selected="true"] {
     /* biome-ignore lint/complexity/noImportantStyles: must beat Storybook's own runtime styles */
